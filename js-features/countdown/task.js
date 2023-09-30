@@ -1,14 +1,14 @@
+const timer = document.getElementById("timer");
+let counterSeconds = Number(timer.textContent);
 
-const decreasesTheTimer = function(){ 
-    const timer = document.getElementById("timer");
-    let counterSeconds = Number(timer.textContent);
-
+const decreasesTheTimer = function(){    
     if(counterSeconds > 0){
         counterSeconds--
         timer.innerHTML = counterSeconds;
     } else{
-        return alert("Вы победили в конкурсе!");
+        alert("Вы победили в конкурсе!");
+        clearInterval("interval");
     }   
 }
 
-setInterval(decreasesTheTimer, 1000);
+const interval = setInterval(decreasesTheTimer, 1000);
